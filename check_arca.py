@@ -1,11 +1,10 @@
-import os
 import requests
 
-webhook = os.environ["DISCORD_WEBHOOK"]
+url = "https://arca.live/u/@하루/86785959"
 
-requests.post(
-    webhook,
-    json={"content": "GitHub Actions 테스트 성공"}
+r = requests.get(
+    url,
+    headers={"User-Agent": "Mozilla/5.0"}
 )
 
-print("done")
+print(r.text[:5000])
